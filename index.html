@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>$MOOV – Charging Through Solana City</title>
+  <title>$MOOV - Solana Bull Project</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>$MOOV</h1>
+  <h1 class="title">$MOOV</h1>
 
-  <div class="description">
-    Born in the heart of Solana City, $MOOV is the meme bull charging through markets and melting charts. We don’t just move — we MOOV with madness.
+  <p class="description">
+    A bullish Solana-based memecoin charging through the crypto jungle with unstoppable energy.
+    Join the wild ride, meme hard, and moon harder 🚀💥
+  </p>
+
+  <div class="contract-box" onclick="copyCA()">
+    <p id="contract-address">0xYourContractHere</p>
+    <span>Tap to copy</span>
   </div>
 
-  <div class="ca-box" onclick="copyCA()">
-    <span id="ca">SOLANA123ABC456XYZ789DEMO000MOOV</span>
-    <div id="copiedMsg" class="copied" style="display: none;">Copied!</div>
-  </div>
-
+  <!-- ROADMAP -->
   <div class="roadmap">
     <h2 class="roadmap-title">🚀 Roadmap</h2>
-
+    
     <div class="phase">
       <h3>Phase 1 – Ignition</h3>
       <ul>
@@ -53,19 +55,17 @@
     </div>
   </div>
 
+  <!-- SOCIAL BUTTONS -->
   <div class="social-buttons">
-    <a href="#" class="glow-btn">Join Telegram</a>
-    <a href="#" class="glow-btn">Follow on Twitter</a>
+    <a href="#" class="glow-btn telegram">Join Telegram</a>
+    <a href="#" class="glow-btn twitter">Follow on Twitter</a>
   </div>
 
   <script>
     function copyCA() {
-      const ca = document.getElementById("ca").textContent;
+      const ca = document.getElementById("contract-address").innerText;
       navigator.clipboard.writeText(ca).then(() => {
-        document.getElementById("copiedMsg").style.display = "block";
-        setTimeout(() => {
-          document.getElementById("copiedMsg").style.display = "none";
-        }, 2000);
+        alert("Contract address copied!");
       });
     }
   </script>
