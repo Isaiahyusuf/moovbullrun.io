@@ -1,159 +1,171 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
 body {
-  background-color: #0a0a0a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-  padding: 40px 20px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #000000, #1a1a2e);
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffe1;
   text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .title {
-  font-size: 4rem;
-  color: #00fff7;
-  text-shadow: 0 0 15px #00fff7, 0 0 40px #00fff7;
-  animation: flicker 3s infinite;
-  margin-bottom: 30px;
+  font-size: 3.5rem;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  margin-top: 20px;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .description {
-  font-size: 1.3rem;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  color: #ccc;
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: #f0f0f0;
   line-height: 1.6;
-  animation: fadeIn 2s ease-in-out;
+  padding: 0 10px;
+  animation: fadeIn 2s ease-out;
 }
 
-.contract-box {
-  background: #111;
-  border: 2px solid #00fff7;
-  color: #00fff7;
-  padding: 20px;
+.ca-box {
   margin: 40px auto;
-  width: fit-content;
+  background: #111;
+  padding: 15px 20px;
+  border: 2px solid #0ff;
   border-radius: 12px;
+  display: inline-block;
   cursor: pointer;
-  box-shadow: 0 0 10px #00fff7, 0 0 25px #00fff7;
-  transition: transform 0.2s;
+  position: relative;
+  transition: 0.3s;
 }
 
-.contract-box:hover {
-  transform: scale(1.05);
+.ca-box:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 20px #0ff;
 }
 
-.contract-box span {
+.copy-tooltip {
   display: block;
   font-size: 0.9rem;
-  margin-top: 10px;
-  color: #aaa;
-}
-
-/* ROADMAP */
-.roadmap {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 0 20px;
-  animation: fadeIn 2s ease-in-out;
+  color: #888;
+  margin-top: 5px;
 }
 
 .roadmap-title {
-  font-size: 2.8rem;
-  color: #00fff7;
-  text-shadow: 0 0 10px #00fff7, 0 0 30px #00fff7;
-  margin-bottom: 40px;
-  animation: pulseTitle 3s infinite ease-in-out;
-}
-
-.phase {
-  border-left: 3px solid #00fff7;
-  padding-left: 25px;
-  margin-bottom: 40px;
-  position: relative;
-  animation: slideInLeft 1.2s ease forwards;
-  opacity: 0;
-}
-
-.phase:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.phase:nth-child(3) {
-  animation-delay: 0.8s;
-}
-
-.phase h3 {
-  color: #00fff7;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px #00fff7;
-}
-
-.phase ul {
-  list-style: none;
-  padding: 0;
-}
-
-.phase ul li {
-  background: rgba(0, 255, 247, 0.08);
-  margin: 8px 0;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border-left: 3px solid #00fff7;
-  transition: all 0.3s ease;
-}
-
-.phase ul li:hover {
-  background: rgba(0, 255, 247, 0.2);
-  transform: translateX(8px);
-}
-
-/* BUTTONS */
-.social-buttons {
+  font-size: 2rem;
   margin-top: 60px;
+  color: #ff00c8;
+  text-shadow: 0 0 5px #ff00c8, 0 0 10px #ff00c8;
+  animation: glowPink 3s ease-in-out infinite alternate;
+}
+
+.roadmap {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeInUp 2s ease;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border: 1px solid #0ff;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.social-buttons {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-.glow-btn {
-  padding: 15px 30px;
-  border: none;
-  border-radius: 10px;
+.btn {
+  padding: 12px 24px;
   font-size: 1rem;
-  color: #fff;
   text-decoration: none;
-  text-shadow: 0 0 5px #000;
-  background: linear-gradient(90deg, #00fff7, #0077ff);
-  box-shadow: 0 0 10px #00fff7, 0 0 20px #0077ff;
-  transition: transform 0.3s;
+  border: 2px solid #0ff;
+  border-radius: 30px;
+  transition: all 0.3s;
+  background: transparent;
+  color: #0ff;
+  box-shadow: 0 0 10px #0ff;
 }
 
-.glow-btn:hover {
-  transform: scale(1.1);
+.btn:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
 }
 
-/* ANIMATIONS */
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+.telegram {
+  border-color: #0088cc;
+  color: #00c3ff;
+  box-shadow: 0 0 10px #00c3ff;
+}
+
+.telegram:hover {
+  background: #00c3ff;
+  color: #000;
+}
+
+.twitter {
+  border-color: #1da1f2;
+  color: #1da1f2;
+  box-shadow: 0 0 10px #1da1f2;
+}
+
+.twitter:hover {
+  background: #1da1f2;
+  color: #000;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  to {
+    text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+  }
+}
+
+@keyframes glowPink {
+  from {
+    text-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8;
+  }
+  to {
+    text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8;
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes pulseTitle {
-  0%, 100% { text-shadow: 0 0 10px #00fff7, 0 0 30px #00fff7; }
-  50% { text-shadow: 0 0 20px #00fff7, 0 0 50px #00fff7; }
-}
-
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
