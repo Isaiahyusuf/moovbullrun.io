@@ -3,72 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>$MOOV - Solana Bull Project</title>
+  <title>$OTTO</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <h1 class="title">$OTTO</h1>
 
-  <h1 class="title">$MOOV</h1>
+    <p class="description">
+      In the wild streets of Solana City, one dog rose from the shadows — his name? <strong>OTTO</strong>. Fierce, loyal, unstoppable. More than a meme, $OTTO is the watchdog of the bull run — guarding gains, sniffing rugs, and barking his way to the top. The world’s not ready for this four-legged phenomenon.
+    </p>
 
-  <p class="description">
-    A bullish Solana-based memecoin charging through the crypto jungle with unstoppable energy.
-    Join the wild ride, meme hard, and moon harder 🚀💥
-  </p>
-
-  <div class="contract-box" onclick="copyCA()">
-    <p id="contract-address">0xYourContractHere</p>
-    <span>Tap to copy</span>
-  </div>
-
-  <!-- ROADMAP -->
-  <div class="roadmap">
-    <h2 class="roadmap-title">🚀 Roadmap</h2>
-    
-    <div class="phase">
-      <h3>Phase 1 – Ignition</h3>
-      <ul>
-        <li>Community Formation</li>
-        <li>Stealth Launch</li>
-        <li>Website Live</li>
-        <li>First 100 Holders</li>
-      </ul>
+    <div class="ca-box" onclick="copyCA()">
+      <span id="ca">CA: 0xYourContractAddressHere</span>
+      <span class="copy-tooltip">Tap to Copy</span>
     </div>
 
-    <div class="phase">
-      <h3>Phase 2 – Acceleration</h3>
-      <ul>
-        <li>CoinGecko + CMC Listings</li>
-        <li>Massive Marketing Push</li>
-        <li>1,000+ Telegram Members</li>
-        <li>DEX Tools Trending</li>
-      </ul>
+    <h2 class="roadmap-title">🐾 Otto’s Pawprint to Glory</h2>
+    <div class="roadmap">
+      <div class="step">🔹 Phase 1: Otto Awakens – Community building begins</div>
+      <div class="step">🔹 Phase 2: Dog of Degen Alley – Launch & Hype Takeover</div>
+      <div class="step">🔹 Phase 3: Barkchain – Utilities + NFT collar drop</div>
+      <div class="step">🔹 Phase 4: Moon Howl – Listings & viral expansion</div>
     </div>
 
-    <div class="phase">
-      <h3>Phase 3 – Takeoff</h3>
-      <ul>
-        <li>CEX Listings</li>
-        <li>Launch NFT Collection</li>
-        <li>10,000+ Holders</li>
-        <li>Partnership Announcements</li>
-      </ul>
+    <div class="social-buttons">
+      <a href="#" class="btn telegram">Telegram</a>
+      <a href="#" class="btn twitter">Twitter</a>
     </div>
-  </div>
-
-  <!-- SOCIAL BUTTONS -->
-  <div class="social-buttons">
-    <a href="#" class="glow-btn telegram">Join Telegram</a>
-    <a href="#" class="glow-btn twitter">Follow on Twitter</a>
   </div>
 
   <script>
     function copyCA() {
-      const ca = document.getElementById("contract-address").innerText;
-      navigator.clipboard.writeText(ca).then(() => {
-        alert("Contract address copied!");
-      });
+      const caText = document.getElementById("ca").innerText.replace("CA: ", "");
+      navigator.clipboard.writeText(caText);
+      alert("Contract address copied!");
     }
   </script>
-
 </body>
 </html>
