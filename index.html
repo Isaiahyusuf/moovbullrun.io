@@ -1,39 +1,74 @@
-<!-- ROADMAP SECTION -->
-<div class="roadmap">
-  <h2 class="roadmap-title">🚀 Roadmap</h2>
-  <div class="phase">
-    <h3>Phase 1 – Ignition</h3>
-    <ul>
-      <li>Community Formation</li>
-      <li>Stealth Launch</li>
-      <li>Website Live</li>
-      <li>First 100 Holders</li>
-    </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$MOOV – Charging Through Solana City</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>$MOOV</h1>
+
+  <div class="description">
+    Born in the heart of Solana City, $MOOV is the meme bull charging through markets and melting charts. We don’t just move — we MOOV with madness.
   </div>
 
-  <div class="phase">
-    <h3>Phase 2 – Acceleration</h3>
-    <ul>
-      <li>CoinGecko + CMC Listings</li>
-      <li>Massive Marketing Push</li>
-      <li>1,000+ Telegram Members</li>
-      <li>DEX Tools Trending</li>
-    </ul>
+  <div class="ca-box" onclick="copyCA()">
+    <span id="ca">SOLANA123ABC456XYZ789DEMO000MOOV</span>
+    <div id="copiedMsg" class="copied" style="display: none;">Copied!</div>
   </div>
 
-  <div class="phase">
-    <h3>Phase 3 – Takeoff</h3>
-    <ul>
-      <li>CEX Listings</li>
-      <li>Launch NFT Collection</li>
-      <li>10,000+ Holders</li>
-      <li>Partnership Announcements</li>
-    </ul>
-  </div>
-</div>
+  <div class="roadmap">
+    <h2 class="roadmap-title">🚀 Roadmap</h2>
 
-<!-- SOCIAL BUTTONS -->
-<div class="social-buttons">
-  <a href="#" class="glow-btn telegram">Join Telegram</a>
-  <a href="#" class="glow-btn twitter">Follow on Twitter</a>
-</div>
+    <div class="phase">
+      <h3>Phase 1 – Ignition</h3>
+      <ul>
+        <li>Community Formation</li>
+        <li>Stealth Launch</li>
+        <li>Website Live</li>
+        <li>First 100 Holders</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 2 – Acceleration</h3>
+      <ul>
+        <li>CoinGecko + CMC Listings</li>
+        <li>Massive Marketing Push</li>
+        <li>1,000+ Telegram Members</li>
+        <li>DEX Tools Trending</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 3 – Takeoff</h3>
+      <ul>
+        <li>CEX Listings</li>
+        <li>Launch NFT Collection</li>
+        <li>10,000+ Holders</li>
+        <li>Partnership Announcements</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="social-buttons">
+    <a href="#" class="glow-btn">Join Telegram</a>
+    <a href="#" class="glow-btn">Follow on Twitter</a>
+  </div>
+
+  <script>
+    function copyCA() {
+      const ca = document.getElementById("ca").textContent;
+      navigator.clipboard.writeText(ca).then(() => {
+        document.getElementById("copiedMsg").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("copiedMsg").style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
