@@ -1,167 +1,72 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: radial-gradient(circle, #0d0d15, #000010);
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
-  animation: pulseBg 8s infinite ease-in-out;
+.roadmap {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes pulseBg {
-  0%, 100% { background: radial-gradient(circle, #0d0d15, #000010); }
-  50% { background: radial-gradient(circle, #131323, #000010); }
-}
-
-.container {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.neon-title {
-  font-size: 4rem;
+.roadmap-title {
+  font-size: 2.8rem;
   color: #00fff7;
-  text-shadow:
-    0 0 10px #00fff7,
-    0 0 20px #00fff7,
-    0 0 40px #00fff7,
-    0 0 80px #00fff7;
-  animation: flicker 3s infinite;
-  margin-bottom: 30px;
+  text-shadow: 0 0 10px #00fff7, 0 0 30px #00fff7;
+  margin-bottom: 40px;
+  animation: pulseTitle 3s infinite ease-in-out;
 }
 
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  40% { opacity: 0.9; }
-  45% { opacity: 0.4; }
-  50% { opacity: 0.9; }
-  55% { opacity: 0.5; }
-  60% { opacity: 1; }
+@keyframes pulseTitle {
+  0%, 100% { text-shadow: 0 0 10px #00fff7, 0 0 30px #00fff7; }
+  50% { text-shadow: 0 0 20px #00fff7, 0 0 50px #00fff7; }
 }
 
-.description {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto 50px;
-  color: #d8faff;
-  animation: slideUp 2s ease;
+.phase {
+  border-left: 3px solid #00fff7;
+  padding-left: 25px;
+  margin-bottom: 40px;
+  position: relative;
+  animation: slideInLeft 1.2s ease forwards;
+  opacity: 0;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
+.phase:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.phase:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes slideInLeft {
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateX(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
   }
 }
 
-.contract-box {
-  background: #111;
-  border: 1px solid #00fff7;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 0 auto 40px;
-  max-width: 400px;
-  animation: glowUp 3s ease-in-out;
-  transition: transform 0.3s;
-}
-
-.contract-box:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px #00fff7;
-}
-
-.copy-wrap {
-  background: #000;
-  border-radius: 6px;
-  padding: 10px;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.copy-wrap span {
-  font-family: monospace;
-  font-size: 1rem;
+.phase h3 {
   color: #00fff7;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00fff7;
 }
 
-.copy-wrap button {
-  background: transparent;
-  color: #00fff7;
-  border: 1px dashed #00fff7;
-  padding: 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+.phase ul {
+  list-style: none;
+  padding: 0;
+}
+
+.phase ul li {
+  background: rgba(0, 255, 247, 0.08);
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-left: 3px solid #00fff7;
   transition: all 0.3s ease;
 }
 
-.copy-wrap button:hover {
-  background: #00fff7;
-  color: #000;
-}
-
-.social-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  animation: fadeIn 3s ease-in;
-}
-
-.glow-btn {
-  padding: 14px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #00fff7;
-  border: 2px solid #00fff7;
-  background: transparent;
-  box-shadow: 0 0 10px #00fff7, inset 0 0 10px #00fff7;
-  text-shadow: 0 0 5px #00fff7;
-  transition: 0.3s;
-}
-
-.glow-btn:hover {
-  background: #00fff7;
-  color: #000;
-  text-shadow: none;
-  box-shadow: 0 0 25px #00fff7;
-}
-
-@keyframes glowUp {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@media (max-width: 600px) {
-  .neon-title {
-    font-size: 2.8rem;
-  }
-
-  .description {
-    font-size: 1rem;
-  }
-
-  .glow-btn {
-    padding: 12px 22px;
-    font-size: 0.95rem;
-  }
+.phase ul li:hover {
+  background: rgba(0, 255, 247, 0.2);
+  transform: translateX(8px);
 }
