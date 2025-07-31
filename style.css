@@ -5,68 +5,55 @@
 }
 
 body {
-  background-color: #0d0d0d;
+  background-color: #0a0a0a;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #00fff7;
-  text-align: center;
+  color: #fff;
   padding: 40px 20px;
-  overflow-x: hidden;
+  text-align: center;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px #00fff7, 0 0 30px #00fff7;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.title {
+  font-size: 4rem;
+  color: #00fff7;
+  text-shadow: 0 0 15px #00fff7, 0 0 40px #00fff7;
+  animation: flicker 3s infinite;
+  margin-bottom: 30px;
 }
 
 .description {
-  font-size: 1.2rem;
-  max-width: 600px;
+  font-size: 1.3rem;
+  max-width: 800px;
   margin: 0 auto 40px;
+  color: #ccc;
   line-height: 1.6;
-  color: #b2fefa;
   animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.ca-box {
-  margin: 40px auto;
+.contract-box {
   background: #111;
   border: 2px solid #00fff7;
-  padding: 15px 20px;
-  border-radius: 10px;
+  color: #00fff7;
+  padding: 20px;
+  margin: 40px auto;
   width: fit-content;
-  box-shadow: 0 0 20px #00fff7;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px #00fff7, 0 0 25px #00fff7;
+  transition: transform 0.2s;
 }
 
-.ca-box:hover {
+.contract-box:hover {
   transform: scale(1.05);
 }
 
-.ca-box span {
-  font-size: 0.95rem;
-  user-select: all;
-}
-
-.copied {
+.contract-box span {
+  display: block;
+  font-size: 0.9rem;
   margin-top: 10px;
-  color: #50ffb1;
-  font-size: 0.85rem;
-  animation: fadeIn 0.5s ease-in-out;
+  color: #aaa;
 }
 
+/* ROADMAP */
 .roadmap {
   max-width: 800px;
   margin: 60px auto;
@@ -75,16 +62,11 @@ h1 {
 }
 
 .roadmap-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #00fff7;
   text-shadow: 0 0 10px #00fff7, 0 0 30px #00fff7;
   margin-bottom: 40px;
   animation: pulseTitle 3s infinite ease-in-out;
-}
-
-@keyframes pulseTitle {
-  0%, 100% { text-shadow: 0 0 10px #00fff7, 0 0 30px #00fff7; }
-  50% { text-shadow: 0 0 20px #00fff7, 0 0 50px #00fff7; }
 }
 
 .phase {
@@ -96,18 +78,11 @@ h1 {
   opacity: 0;
 }
 
-.phase:nth-child(2) { animation-delay: 0.4s; }
-.phase:nth-child(3) { animation-delay: 0.8s; }
-
-@keyframes slideInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
+.phase:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.phase:nth-child(3) {
+  animation-delay: 0.8s;
 }
 
 .phase h3 {
@@ -136,25 +111,49 @@ h1 {
   transform: translateX(8px);
 }
 
+/* BUTTONS */
 .social-buttons {
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .glow-btn {
-  background: transparent;
-  border: 2px solid #00fff7;
-  color: #00fff7;
-  padding: 12px 25px;
-  margin: 10px;
-  border-radius: 50px;
-  text-decoration: none;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
   font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7 inset;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 5px #000;
+  background: linear-gradient(90deg, #00fff7, #0077ff);
+  box-shadow: 0 0 10px #00fff7, 0 0 20px #0077ff;
+  transition: transform 0.3s;
 }
 
 .glow-btn:hover {
-  background: #00fff7;
-  color: #000;
-  box-shadow: 0 0 20px #00fff7, 0 0 30px #00fff7 inset;
+  transform: scale(1.1);
+}
+
+/* ANIMATIONS */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseTitle {
+  0%, 100% { text-shadow: 0 0 10px #00fff7, 0 0 30px #00fff7; }
+  50% { text-shadow: 0 0 20px #00fff7, 0 0 50px #00fff7; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
