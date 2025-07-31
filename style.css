@@ -1,22 +1,24 @@
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(#0e0e1a, #000010);
+  background: radial-gradient(circle, #0d0d15, #000010);
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  animation: pulseBg 8s infinite ease-in-out;
+}
+
+@keyframes pulseBg {
+  0%, 100% { background: radial-gradient(circle, #0d0d15, #000010); }
+  50% { background: radial-gradient(circle, #131323, #000010); }
 }
 
 .container {
+  padding: 40px 20px;
   text-align: center;
-  padding: 30px;
 }
 
-.neon {
+.neon-title {
   font-size: 4rem;
   color: #00fff7;
   text-shadow:
@@ -24,81 +26,142 @@ body {
     0 0 20px #00fff7,
     0 0 40px #00fff7,
     0 0 80px #00fff7;
-  animation: glow 2s ease-in-out infinite alternate;
+  animation: flicker 3s infinite;
+  margin-bottom: 30px;
 }
 
-@keyframes glow {
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0.9; }
+  45% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+  55% { opacity: 0.5; }
+  60% { opacity: 1; }
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #d8faff;
+  animation: slideUp 2s ease;
+}
+
+@keyframes slideUp {
   from {
-    text-shadow:
-      0 0 10px #00fff7,
-      0 0 20px #00fff7,
-      0 0 40px #00fff7;
+    transform: translateY(40px);
+    opacity: 0;
   }
   to {
-    text-shadow:
-      0 0 20px #00fff7,
-      0 0 40px #00fff7,
-      0 0 80px #00fff7;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 .contract-box {
-  margin-top: 40px;
   background: #111;
   border: 1px solid #00fff7;
-  padding: 15px 20px;
-  border-radius: 10px;
-  display: inline-block;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  animation: glowUp 3s ease-in-out;
+  transition: transform 0.3s;
+}
+
+.contract-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00fff7;
 }
 
 .copy-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
   background: #000;
-  padding: 10px 15px;
   border-radius: 6px;
+  padding: 10px;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .copy-wrap span {
   font-family: monospace;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  color: #00fff7;
 }
 
 .copy-wrap button {
   background: transparent;
-  border: none;
   color: #00fff7;
-  font-size: 1.2rem;
+  border: 1px dashed #00fff7;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.copy-wrap button:hover {
+  background: #00fff7;
+  color: #000;
 }
 
 .social-buttons {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
   flex-wrap: wrap;
+  animation: fadeIn 3s ease-in;
 }
 
 .glow-btn {
-  padding: 15px 30px;
+  padding: 14px 28px;
   border-radius: 30px;
   text-decoration: none;
-  color: #00fff7;
   font-weight: bold;
+  color: #00fff7;
   border: 2px solid #00fff7;
   background: transparent;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 8px #00fff7;
-  box-shadow: 0 0 15px #00fff7, inset 0 0 10px #00fff7;
+  box-shadow: 0 0 10px #00fff7, inset 0 0 10px #00fff7;
+  text-shadow: 0 0 5px #00fff7;
+  transition: 0.3s;
 }
 
 .glow-btn:hover {
   background: #00fff7;
   color: #000;
   text-shadow: none;
-  box-shadow: 0 0 25px #00fff7, inset 0 0 10px #ffffff;
+  box-shadow: 0 0 25px #00fff7;
+}
+
+@keyframes glowUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .neon-title {
+    font-size: 2.8rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .glow-btn {
+    padding: 12px 22px;
+    font-size: 0.95rem;
+  }
 }
