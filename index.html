@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>$MOOV – Neon Bull</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>$MOOV – The Neon Bull</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
-    <h1 class="neon">$MOOV</h1>
+    <h1 class="neon-title">$MOOV</h1>
 
-    <div class="contract-box">
-      <p>Contract Address:</p>
-      <div class="copy-wrap" onclick="copyCA()">
+    <p class="description">
+      The bull is loose in Solana City — and it’s charging full speed. <br />
+      $MOOV is the memecoin movement lighting up the streets with unstoppable hype, neon energy, and real momentum. Join the run. 🟣🐂
+    </p>
+
+    <div class="contract-box" onclick="copyCA()">
+      <p>Contract Address</p>
+      <div class="copy-wrap">
         <span id="ca">0x1234...ABCD5678</span>
-        <button>📋</button>
+        <button>📋 Tap to Copy</button>
       </div>
     </div>
 
@@ -26,9 +31,9 @@
 
   <script>
     function copyCA() {
-      const caText = document.getElementById("ca").textContent;
-      navigator.clipboard.writeText(caText).then(() => {
-        alert("Contract address copied!");
+      const ca = document.getElementById("ca").textContent;
+      navigator.clipboard.writeText(ca).then(() => {
+        alert("Contract Address Copied!");
       });
     }
   </script>
