@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$MOOV – Neon Bull</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="neon">$MOOV</h1>
+
+    <div class="contract-box">
+      <p>Contract Address:</p>
+      <div class="copy-wrap" onclick="copyCA()">
+        <span id="ca">0x1234...ABCD5678</span>
+        <button>📋</button>
+      </div>
+    </div>
+
+    <div class="socials">
+      <a href="#" class="btn twitter" target="_blank" title="Twitter">
+        <img src="twitter.svg" alt="Twitter" />
+      </a>
+      <a href="#" class="btn telegram" target="_blank" title="Telegram">
+        <img src="telegram.svg" alt="Telegram" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function copyCA() {
+      const caText = document.getElementById("ca").textContent;
+      navigator.clipboard.writeText(caText).then(() => {
+        alert("Contract address copied!");
+      });
+    }
+  </script>
+</body>
+</html>
