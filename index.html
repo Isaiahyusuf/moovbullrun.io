@@ -22,15 +22,27 @@
       <span class="copy-tooltip">Tap to Copy</span>
     </div>
 
-    <div class="roadmap">
-      <h2 class="section-title">Roadmap</h2>
-      <ul class="animated-list">
-        <li>Phase 1: Launch Otto</li>
-        <li>Phase 2: Meme Domination</li>
-        <li>Phase 3: Viral Takeover</li>
-        <li>Phase 4: Otto on the Throne</li>
-      </ul>
+    <section class="roadmap-section">
+  <h2 class="roadmap-title">Roadmap</h2>
+  <div class="roadmap">
+    <div class="roadmap-item" onclick="toggleExplanation(this)">
+      <h3>Phase 1: Launch</h3>
+      <p class="explanation">Token launch on Solana, website live, and social portals opened to the public.</p>
     </div>
+    <div class="roadmap-item" onclick="toggleExplanation(this)">
+      <h3>Phase 2: Hype Ignition</h3>
+      <p class="explanation">Community raids, influencers onboarded, memes and momentum build-up.</p>
+    </div>
+    <div class="roadmap-item" onclick="toggleExplanation(this)">
+      <h3>Phase 3: Listing</h3>
+      <p class="explanation">Apply for listings on Solscan, Gecko, and CMC. Liquidity stabilization begins.</p>
+    </div>
+    <div class="roadmap-item" onclick="toggleExplanation(this)">
+      <h3>Phase 4: Expansion</h3>
+      <p class="explanation">CEX listings, community voting, merchandise drop, and roadmap 2.0 reveal.</p>
+    </div>
+  </div>
+</section>
 
     <div class="social-icons">
   <a href="https://t.me/ottosrevengeportal" target="_blank">
@@ -48,5 +60,10 @@
       alert("Contract address copied!");
     }
   </script>
+    <script>
+  function toggleExplanation(element) {
+    element.classList.toggle("active");
+  }
+</script>
 </body>
 </html>
