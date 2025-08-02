@@ -2,39 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>$OTTO</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <img src="otto.jpeg.JPG" alt="$OTTO Logo" class="logo" />
-    
-    <h1 class="title">$OTTO</h1>
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="otto.jpeg.JPG" alt="OTTO Logo" class="otto-logo" />
+    </div>
 
+    <!-- Project Name -->
+    <h1 class="title animate-title">$OTTO</h1>
+
+    <!-- Description -->
     <p class="description">
-      In the wild streets of Solana City, one dog rose from the shadows — his name? OTTO. Fierce, loyal, unstoppable.
-      More than a meme, $OTTO is the watchdog of the bull run — guarding gains, sniffing rugs, and barking his way to the top.
-      The world’s not ready for this four-legged phenomenon.
+      In the wild streets of Solana City, one dog rose from the shadows — his name? <strong>OTTO</strong>. Fierce, loyal, unstoppable. More than a meme, $OTTO is the watchdog of the bull run — guarding gains, sniffing rugs, and barking his way to the top. The world’s not ready for this four-legged phenomenon.
     </p>
 
-    <div class="contract-box">
-      CR: 0xYourContractAddressHere<br>
-      <span class="copy-hint">Tap to Copy</span>
+    <!-- CA Box -->
+    <div class="ca-box" onclick="copyCA()">
+      <span id="ca">CA: (Tap to Copy)</span>
+      <span class="copy-tooltip">Tap to Copy</span>
     </div>
 
-    <h2 class="roadmap-title animated-glow">💫 Otto’s Pawprint to Glory</h2>
-    <ul class="roadmap animated-roadmap">
-      <li class="animated-item">🔹 Phase 1: Otto Awakens – Community building begins</li>
-      <li class="animated-item">🔹 Phase 2: Dog of Degen Alley – Launch & Hype Takeover</li>
-      <li class="animated-item">🔹 Phase 3: Barkchain – Utilities + NFT collar drop</li>
-      <li class="animated-item">🔹 Phase 4: Moon Howl – Listings & Viral expansion</li>
-    </ul>
+    <!-- Roadmap Title -->
+    <h2 class="roadmap-title">🐾 Otto’s Pawprint to Glory</h2>
 
-    <div class="buttons">
-      <a href="#" class="social-button">Telegram</a>
-      <a href="#" class="social-button">Twitter</a>
+    <!-- Animated Roadmap -->
+    <div class="roadmap">
+      <div class="step glow">🔹 Phase 1: Otto Awakens – Community building begins</div>
+      <div class="step glow delay-1">🔹 Phase 2: Dog of Degen Alley – Launch & Hype Takeover</div>
+      <div class="step glow delay-2">🔹 Phase 3: Barkchain – Utilities + NFT collar drop</div>
+      <div class="step glow delay-3">🔹 Phase 4: Moon Howl – Listings & viral expansion</div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-buttons">
+      <a href="https://t.me/ottosrevengeportal" class="btn telegram" target="_blank">Telegram</a>
+      <a href="https://x.com/ottosrevengesol?s=11&t=PyPW9bjjNeNPQHmTJRGBtA" class="btn twitter" target="_blank">Twitter</a>
     </div>
   </div>
+
+  <!-- Script to Copy CA -->
+  <script>
+    function copyCA() {
+      const caText = document.getElementById("ca").innerText.replace("CA: ", "");
+      navigator.clipboard.writeText(caText);
+      alert("Contract address copied!");
+    }
+  </script>
 </body>
 </html>
