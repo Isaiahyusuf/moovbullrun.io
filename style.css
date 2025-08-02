@@ -211,3 +211,59 @@ body {
     transform: translateY(0);
   }
 }
+.animated-otto {
+  font-size: 4rem;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  animation: ottoPop 1s ease forwards;
+  letter-spacing: 0.1em;
+}
+
+.animated-otto span {
+  display: inline-block;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+.animated-otto span:nth-child(1) {
+  animation-delay: 0s;
+}
+.animated-otto span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animated-otto span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.animated-otto span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* Pop in entrance */
+@keyframes ottoPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    text-shadow: 0 0 10px #00ffcc;
+    transform: translateY(0);
+  }
+  50% {
+    text-shadow: 0 0 25px #ff00cc, 0 0 40px #ff00cc;
+    transform: translateY(-3px);
+  }
+  100% {
+    text-shadow: 0 0 10px #00ffcc;
+    transform: translateY(0);
+  }
+}
