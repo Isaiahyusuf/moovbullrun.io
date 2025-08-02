@@ -169,3 +169,43 @@ body {
     transform: translateY(0);
   }
 }
+.logo-container {
+  text-align: center;
+  margin-top: 20px;
+  animation: slideDownFade 1.5s ease-in-out;
+}
+
+.otto-logo {
+  width: 180px;
+  max-width: 90%;
+  animation: pulseGlow 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px #00ff88);
+}
+
+/* Logo pulse animation */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px #00ff88);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px #ff0055);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px #00ff88);
+  }
+}
+
+/* Smooth slide-down entrance */
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
