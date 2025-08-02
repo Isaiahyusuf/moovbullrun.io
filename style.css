@@ -52,7 +52,6 @@ body {
   border: 1px solid var(--primary-color);
   border-radius: 8px;
   cursor: pointer;
-  position: relative;
   color: var(--primary-color);
   font-weight: bold;
   transition: background 0.3s;
