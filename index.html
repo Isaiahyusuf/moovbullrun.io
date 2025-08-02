@@ -7,51 +7,32 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div class="container">
-    <!-- Logo -->
-    <img src="otto.jpeg.JPG" alt="Otto Logo" class="logo" />
+    <img src="otto.jpeg.JPG" alt="OTTO Logo" class="logo" />
 
-    <!-- Animated Title -->
-    <h1 class="title animated-title">$OTTO</h1>
+    <h1 class="title">$OTTO</h1>
 
-    <!-- Description -->
     <p class="description">
-      In the wild streets of Solana City, one dog rose from the shadows — his name? <strong>OTTO</strong>.
-      Fierce, loyal, unstoppable. More than a meme, $OTTO is the watchdog of the bull run — guarding gains,
-      sniffing rugs, and barking his way to the top. The world’s not ready for this four-legged phenomenon.
+      In the wild streets of Solana City, one dog rose from the shadows — his name? OTTO. Fierce, loyal, unstoppable. More than a meme, $OTTO is the watchdog of the bull run – guarding gains, sniffing rugs, and barking his way to the top. The world’s not ready for this four-legged phenomenon.
     </p>
 
-    <!-- Contract Address -->
-    <div class="ca-box" onclick="copyCA()">
-      <span id="ca">CA: 0xYourContractAddressHere</span>
-      <span class="copy-tooltip">Tap to Copy</span>
+    <div class="contract-box">
+      <span class="contract-label">CA: 0xYourContractAddressHere</span>
+      <button onclick="navigator.clipboard.writeText('0xYourContractAddressHere')">Tap to Copy</button>
     </div>
 
-    <!-- Roadmap -->
-    <h2 class="roadmap-title">🐾 Otto’s Pawprint to Glory</h2>
-    <div class="roadmap">
-      <div class="step">🔹 Phase 1: Otto Awakens – Community building begins</div>
-      <div class="step">🔹 Phase 2: Dog of Degen Alley – Launch & Hype Takeover</div>
-      <div class="step">🔹 Phase 3: Barkchain – Utilities + NFT collar drop</div>
-      <div class="step">🔹 Phase 4: Moon Howl – Listings & viral expansion</div>
-    </div>
+    <h2 class="roadmap-title">Otto’s Pawprint to Glory</h2>
+    <ul class="roadmap">
+      <li>🔷 Phase 1: Otto Awakens – Community building begins</li>
+      <li>🔷 Phase 2: Dog of Degen Alley – Launch & Hype Takeover</li>
+      <li>🔷 Phase 3: Barkchain – Utilities + NFT collar drop</li>
+      <li>🔷 Phase 4: Moon Howl – Listings & viral expansion</li>
+    </ul>
 
-    <!-- Social Buttons -->
-    <div class="social-buttons">
-      <a href="https://t.me/ottosrevengeportal" class="btn telegram" target="_blank">Telegram</a>
-      <a href="https://x.com/ottosrevengesol?s=11&t=PyPW9bjjNeNPQHmTJRGBtA" class="btn twitter" target="_blank">Twitter</a>
+    <div class="buttons">
+      <a href="#" class="btn">Telegram</a>
+      <a href="#" class="btn">Twitter</a>
     </div>
   </div>
-
-  <!-- JS for Copy -->
-  <script>
-    function copyCA() {
-      const caText = document.getElementById("ca").innerText.replace("CA: ", "");
-      navigator.clipboard.writeText(caText);
-      alert("Contract address copied!");
-    }
-  </script>
-
 </body>
 </html>
