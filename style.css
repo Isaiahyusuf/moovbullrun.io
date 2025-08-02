@@ -1,128 +1,166 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-/* GLOBAL STYLES */
+/* ROOT THEME */
+:root {
+  --bg: #0d0d0d;
+  --text: #ffffff;
+  --accent: #00ffc3;
+  --glow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+}
+
 body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  background: linear-gradient(to bottom right, #0b0f1a, #1a1e2a);
-  color: white;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 .container {
   padding: 2rem;
   text-align: center;
-  max-width: 800px;
-  margin: auto;
 }
 
-/* LOGO FADE-IN */
-.logo {
-  width: 200px;
-  margin-bottom: 1rem;
-  animation: fadeIn 2s ease-in-out;
+/* LOGO ANIMATION */
+.logo-container {
+  margin-top: 20px;
+  animation: float 4s ease-in-out infinite;
 }
 
-/* ANIMATED TITLE */
+.otto-logo {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: var(--glow);
+}
+
+/* TITLE ANIMATION */
 .title {
   font-size: 3rem;
-  color: #00ffe1;
-  text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1;
-  animation: pulse 3s infinite;
+  color: var(--accent);
+  text-shadow: var(--glow);
+  margin: 1rem 0;
+}
+
+.animate-title {
+  animation: pulse 2s infinite alternate;
 }
 
 /* DESCRIPTION */
 .description {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
-  animation: fadeIn 2s ease-in;
 }
 
-/* CONTRACT BOX */
-.contract-box {
-  background: #111;
-  border: 2px solid #00ffe1;
+/* COPY CA BOX */
+.ca-box {
+  background-color: #1a1a1a;
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
   border-radius: 10px;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  color: #00ffe1;
   cursor: pointer;
-  transition: transform 0.2s;
-  animation: glow 3s ease-in-out infinite;
-}
-.contract-box:hover {
-  transform: scale(1.03);
-}
-.copy-hint {
-  font-size: 0.8rem;
-  color: #999;
+  color: var(--accent);
+  font-weight: bold;
+  position: relative;
+  box-shadow: var(--glow);
+  margin-bottom: 2rem;
 }
 
-/* ROADMAP TITLE */
-.roadmap-title {
-  font-size: 1.5rem;
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff;
-  margin-bottom: 1rem;
+.copy-tooltip {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 4px;
 }
 
 /* ROADMAP */
-.roadmap {
-  list-style: none;
-  padding: 0;
-}
-.roadmap li {
-  background: #111;
-  border: 1px solid #00ffe1;
-  margin: 0.5rem auto;
-  padding: 0.7rem;
-  border-radius: 8px;
-  max-width: 500px;
-  animation: float 4s ease-in-out infinite;
-  color: #00ffe1;
-  text-shadow: 0 0 5px #00ffe1;
+.roadmap-title {
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  color: var(--accent);
+  text-shadow: var(--glow);
 }
 
-/* BUTTONS */
-.buttons {
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.step {
+  background: #1f1f1f;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  font-size: 1.1rem;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.glow {
+  box-shadow: var(--glow);
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+.delay-2 {
+  animation-delay: 1s;
+}
+.delay-3 {
+  animation-delay: 1.5s;
+}
+
+/* SOCIAL BUTTONS */
+.social-buttons {
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
-.social-button {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 0.6rem 1.2rem;
-  border: 2px solid #00ffe1;
-  color: #00ffe1;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: all 0.3s;
-}
-.social-button:hover {
-  background: #00ffe1;
+
+.btn {
+  background-color: var(--accent);
   color: #000;
-  box-shadow: 0 0 15px #00ffe1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: var(--glow);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00cc9f;
 }
 
 /* ANIMATIONS */
-@keyframes pulse {
-  0% { text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1; }
-  50% { text-shadow: 0 0 20px #00ffe1, 0 0 40px #00ffe1; }
-  100% { text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 5px #00ffe1; }
-  50% { box-shadow: 0 0 15px #00ffe1; }
-}
-
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  from {
+    text-shadow: 0 0 10px var(--accent);
+  }
+  to {
+    text-shadow: 0 0 25px var(--accent), 0 0 40px var(--accent);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
