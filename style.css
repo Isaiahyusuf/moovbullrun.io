@@ -267,3 +267,38 @@ body {
     transform: translateY(0);
   }
 }
+.running-dog {
+  position: fixed;
+  bottom: 0;
+  left: -200px;
+  width: 180px;
+  height: auto;
+  z-index: 1;
+  animation: runAcross 12s linear infinite;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.running-dog img {
+  width: 100%;
+  height: auto;
+}
+
+/* Dog runs left to right, then flips and returns */
+@keyframes runAcross {
+  0% {
+    left: -200px;
+    transform: scaleX(1);
+  }
+  49% {
+    left: 100vw;
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
+  100% {
+    left: -200px;
+    transform: scaleX(-1);
+  }
+}
