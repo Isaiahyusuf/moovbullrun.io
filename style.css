@@ -169,6 +169,7 @@ body {
     transform: translateY(0);
   }
 }
+/* Logo animation styles */
 .logo-container {
   text-align: center;
   margin-top: 20px;
@@ -180,9 +181,10 @@ body {
   max-width: 90%;
   animation: pulseGlow 3s infinite ease-in-out;
   filter: drop-shadow(0 0 10px #00ff88);
+  border-radius: 10px;
 }
 
-/* Logo pulse animation */
+/* Logo pulse glow animation */
 @keyframes pulseGlow {
   0% {
     transform: scale(1);
